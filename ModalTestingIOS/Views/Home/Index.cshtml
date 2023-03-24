@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // (A) RUN THIS ON PAGE LOAD
+        window.addEventListener("load", () => {
+            OnLoadPriceAvail();
+        });
+    </script>
+
+    <style>
+        .center {
+            margin: auto;
+            width: auto;
+            padding: 10px;
+        }
+
+        .textColor {
+            color: antiquewhite;
+        }
+
+
+
+        .box {
+            width: 100px;
+            height: 50px;
+            background-image: url("../../wwwroot/Images/IconVanOne.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        .modalBackground {
+            background-color: #143d59;
+            border-radius: 1em;
+            box-shadow: .35em .35em;
+            padding: 1em;
+            display: inline-block;
+        }
+
+        .optionDis {
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+            .optionDis li {
+                display: inline-block;
+                font-size: 20px;
+                padding: 20px;
+                /*width: 30%;*/
+            }
+
+        .bd-example-modal-lg .modal-dialog {
+            display: table;
+            position: relative;
+            margin: 0 auto;
+            top: calc(50% - 24px);
+        }
+
+            .bd-example-modal-lg .modal-dialog .modal-content {
+                background-color: transparent;
+                border: none;
+            }
+
+    </style>
+</head>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                    <span class="visually-hidden">Loading...</span>
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>Our Artificial Intelligence generated high frequency algorithms utilizing the blockchain are processing...</p>
+                <p>(another bad joke)</p>
+                <p>Again, this may take about 20 seconds</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<input type="button" value="show modal" onclick="ShowModal()" />
+
+
+
+<script>
+    function ShowModal(){
+        $('#staticBackdrop').modal('show');
+            
+            
+    }
+
+
+    function SubmitDateForm() {
+
+            //data - bs - toggle="modal"
+            //staticBackdrop
+            //document.getElementById("staticBackdrop").modal('show');
+            $('#staticBackdrop').modal('show');
+            
+            document.forms["dateForm"].submit();
+
+            //loadingModal();
+        }
+
+</script>
